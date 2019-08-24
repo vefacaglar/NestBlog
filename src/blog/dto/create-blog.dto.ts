@@ -1,5 +1,5 @@
 import { ApiModelProperty } from '@nestjs/swagger'
-import { IsString, IsDate, IsBoolean } from 'class-validator'
+import { IsString, IsDate, IsBoolean, IsNumber } from 'class-validator'
 
 export class CreateBlogDto {
 
@@ -15,11 +15,14 @@ export class CreateBlogDto {
     @IsString()
     readonly body: string;
 
-    @ApiModelProperty()
-    @IsDate()
     readonly date: Date;
 
     @ApiModelProperty()
     @IsBoolean()
     readonly hidden: boolean;
+
+    readonly meta: {
+        favs: number;
+        readonly votes: number;
+    };
 }

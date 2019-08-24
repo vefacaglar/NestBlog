@@ -1,11 +1,11 @@
 import { Document } from 'mongoose';
 
-interface Comment {
+export interface Comment {
   readonly body: string;
   readonly date: Date;
 }
 
-interface Meta {
+export interface Meta {
   readonly votes: number;
   readonly favs: number;
 }
